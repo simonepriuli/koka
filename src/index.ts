@@ -1,5 +1,5 @@
-export function add(a: number, b: number): number {
-    return a + b;
-  }
-  
-  console.log(add(3, 5)); //output: 8
+import { guard } from "./core/guard";
+import { Try } from "./core/try";
+
+export { guard };
+export { Try };
