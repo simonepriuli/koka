@@ -1,5 +1,4 @@
-import { guard } from "./core/guard";
-import { Try } from "./core/try";
+import { tryAsync } from "./core/functions/try/TryAsync";
 
-export { guard };
-export { Try };
+
+export {tryAsync}
