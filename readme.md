@@ -4,7 +4,9 @@
 
 <br>
 
-効果 (こうか): This means "effect" or "effectiveness." It can be used to talk about the impact or result of something.
+Kōka helps you craft elegant and secure TypeScript code. It enables easy error handling, streamlines development processes, and enhances code maintainability.
+
+_効果 (こうか): This means "effect" or "effectiveness." It can be used to talk about the impact or result of something._
 
 ```bash
 npm i koka-ts
