@@ -4,8 +4,10 @@
 
 <br>
 
+効果 (こうか): This means "effect" or "effectiveness." It can be used to talk about the impact or result of something.
+
 ```bash
-  npm i koka-ts
+npm i koka-ts
 ```
 
 ## Usage/Examples
