@@ -1,6 +1,6 @@
 <br>
 
-![Kōka](./img/logo.png)
+![Kōka](https://raw.githubusercontent.com/simonepriuli/koka/main/img/logo.png)
 
 <br>
 
