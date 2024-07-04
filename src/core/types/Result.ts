@@ -36,7 +36,7 @@ export class Result<T, E extends Error> {
    * @param {T} defaultValue - The default value to return if the result is an error.
    * @returns {T} The value of the result or the default value.
    */
-  unwrap_or(defaultValue: T): T {
+  unwrapOr(defaultValue: T): T {
     if (this.isOk()) {
       return this.ok as T;
     } else {
