@@ -14,7 +14,7 @@ npm i koka-ts
 
 ## Usage/Examples
 
-# trySync and tryAsync
+### trySync and tryAsync
 
 ```typescript
 async function getData(): Promise<string> {
@@ -32,7 +32,7 @@ async function getData(): Promise<string> {
 }
 ```
 
-# guardSync and guadrAsync
+### guardSync and guadrAsync
 
 ```typescript
 async function getUser(userId: number): Promise<User> {
