@@ -43,7 +43,7 @@ async function getUser(userId: number): Promise<User> {
 
 ```typescript
 async function getUserName(userId: number): Promise<string> {
-  const user = (await db.users.findOne(1)).name;
-  return guardSync(user).or("John Doe");
+  const userName = (await db.users.findOne(1)).name;
+  return guardSync(userName).or("John Doe");
 }
 ```
