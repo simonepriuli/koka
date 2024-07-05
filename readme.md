@@ -32,7 +32,7 @@ async function getData(): Promise<string> {
 }
 ```
 
-### guardSync and guadrAsync
+### guardSync and guardAsync
 
 ```typescript
 async function getUser(userId: number): Promise<User> {
