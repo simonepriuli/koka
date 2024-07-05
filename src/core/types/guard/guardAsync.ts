@@ -31,7 +31,7 @@ export class GuardAsync<T> {
    * @throws {Error} If the guarded value is undefined.
    * @returns A promise that resolves to the guarded value.
    */
-  async throw(): Promise<T> {
+  async _throws(): Promise<T> {
     try {
       const value = await this.valuePromise;
       if (value === undefined) {

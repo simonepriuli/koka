@@ -20,7 +20,7 @@ export class Guard<T> {
    * @throws {Error} If the guarded value is undefined.
    * @returns A promise that resolves to the guarded value.
    */
-  throw(): T {
+  _throws(): T {
     if (this.value === undefined) {
       throw new Error("Value is undefined");
     }
