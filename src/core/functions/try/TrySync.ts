@@ -10,7 +10,7 @@ export function trySync<T>(fn: () => T): Result<T, Error> {
   try {
     const data = fn();
     return new Result<T, Error>(data, null);
-  } catch (error) {
+  } catch (error: unknown) {
     if (error instanceof Error) {
       return new Result<T, Error>(null, error);
     }

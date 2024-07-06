@@ -3,6 +3,15 @@ export class Result<T, E extends Error> {
   private err?: E | null; // error
 
   constructor(ok: T | null, err: E | null) {
+    // special case to handle the unwrap method
+    /*
+    if (ok === undefined && err === null) {
+      this.ok = undefined;
+      this.err = new Error("Value is undefined") as E;
+      return;
+    }
+      */
+
     if (ok === null && err === null) {
       throw new Error("Result must have a value or an error");
     }
@@ -20,12 +29,12 @@ export class Result<T, E extends Error> {
    * @throws {E} The error if the result is an error.
    */
   unwrap(): T {
-    if (this.isOk()) {
-      return this.ok as T;
-    }
-
     if (this.isErr()) {
       throw this.err as E;
+    }
+
+    if (this.isOk()) {
+      return this.ok as T;
     }
 
     throw new Error("Unknown error");
@@ -36,12 +45,21 @@ export class Result<T, E extends Error> {
    * @param {T} defaultValue - The default value to return if the result is an error.
    * @returns {T} The value of the result or the default value.
    */
-  unwrapOr(defaultValue: T): T {
+  unwrap_or(defaultValue: T): T {
     if (this.isOk()) {
       return this.ok as T;
     } else {
       return defaultValue;
     }
+  }
+
+  /**
+   * Unwraps the result, returning the value without checking if an error is present.
+   * @returns {T} The value of the result.
+   * @throws {E} The error if the result is an error.
+   */
+  unwrap_unchecked(): T {
+    return this.ok as T;
   }
 
   /**
@@ -68,7 +86,7 @@ export class Result<T, E extends Error> {
    * @returns {this is Result<T, never>} True if the result is a value, false otherwise.
    */
   isOk(): this is Result<T, never> {
-    return this.ok !== undefined && this.ok !== null;
+    return this.ok !== null;
   }
 
   /**

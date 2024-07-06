@@ -4,4 +4,4 @@ import { tryAsync } from "./core/functions/try/TryAsync";
 import { trySync } from "./core/functions/try/TrySync";
 import { Result } from "./core/types/Result";
 
-export { tryAsync, trySync ,guardAsync, guardSync, Result };
+export { tryAsync, trySync, guardAsync, guardSync, Result };
