@@ -1,4 +1,4 @@
-export class Guard<T> {
+export class GuardSync<T> {
   private value: T | undefined;
 
   constructor(value: T | undefined) {

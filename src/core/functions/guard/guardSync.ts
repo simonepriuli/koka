@@ -1,4 +1,4 @@
-import { Guard } from "../../types/guard/guardSync";
+import { GuardSync } from "../../types/guard/guardSync";
 
 /**
  * Guards against undefined values and provides methods to handle them.
@@ -6,6 +6,6 @@ import { Guard } from "../../types/guard/guardSync";
  * @returns An object with methods to handle undefined values.
  * @template T - The type of the value being guarded.
  */
-export function guardSync<T>(value: T | undefined): Guard<T> {
-  return new Guard(value);
+export function guardSync<T>(value: T | undefined): GuardSync<T> {
+  return new GuardSync(value);
 }
