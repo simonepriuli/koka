@@ -45,7 +45,7 @@ export class Result<T, E extends Error> {
    * @param {T} defaultValue - The default value to return if the result is an error.
    * @returns {T} The value of the result or the default value.
    */
-  unwrap_or(defaultValue: T): T {
+  unwrapOr(defaultValue: T): T {
     if (this.isOk()) {
       return this.ok as T;
     } else {
@@ -58,7 +58,7 @@ export class Result<T, E extends Error> {
    * @returns {T} The value of the result.
    * @throws {E} The error if the result is an error.
    */
-  unwrap_unchecked(): T {
+  unwrapUnchecked(): T {
     return this.ok as T;
   }
 
@@ -68,7 +68,7 @@ export class Result<T, E extends Error> {
    * @returns {T} The value of the result.
    * @throws {Error} An error with the custom message if the result is an error.
    */
-  expect(msg: string): T {
+  _expect(msg: string): T {
     if (this.isOk()) {
       return this.ok as T;
     }
