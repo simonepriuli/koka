@@ -104,4 +104,21 @@ export class Result<T, E extends Error> {
   getErr(): this extends Result<never, E> ? E : E | null {
     return this.err as E;
   }
+
+  /**
+   * Transforms the value of the result if it is ok, otherwise returns the error.
+   * @param {Function} callback - The function to apply to the value if the result is ok.
+   * @returns {Result<U, E>} A new result with the transformed value or the same error.
+   */
+  map<U>(callback: (value: T) => U): Result<U, E> {
+    if (this.isErr()) {
+      return new Result<U, E>(null, this.err as E);
+    }
+
+    if (this.isOk()) {
+      return new Result<U, E>(callback(this.ok as T), null);
+    }
+
+    throw new Error("Unknown error");
+  }
 }

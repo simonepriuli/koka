@@ -1,4 +1,4 @@
-import { Guard } from "../../types/guard/Guard";
+import { Guard } from "../../types/Guard";
 
 /**
  * Guards against undefined values and provides methods to handle them.

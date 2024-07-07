@@ -1,3 +1,5 @@
+import { Err } from "../../types/Err";
+import { Ok } from "../../types/Ok";
 import { Result } from "../../types/Result";
 
 /**
@@ -9,12 +11,12 @@ import { Result } from "../../types/Result";
 export async function tryAsync<T>(fn: Promise<T>): Promise<Result<T, Error>> {
   try {
     const data = await fn;
-    return new Result<T, Error>(data, null);
+    return new Ok<T, Error>(data);
   } catch (error: unknown) {
     if (error instanceof Error) {
-      return new Result<T, Error>(null, error);
+      return new Err<T, Error>(error);
     }
 
-    return new Result<T, Error>(null, new Error("Unknown error"));
+    return new Err<T, Error>(new Error("Unknown error"));
   }
 }
